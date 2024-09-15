@@ -1,0 +1,67 @@
+.CreateUtilisateur-container {
+  background-color: #f0f8ff;
+  border: 1px solid #000000;
+  padding: 20px;
+  max-inline-size: 400px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 130px auto 80px; 
+}
+
+.banner-image {
+  position: absolute;
+  inset-block-start: 15px;
+  inset-inline-start: 25px;
+  inline-size: 150px;
+  block-size: auto;
+}
+
+.CreateUtilisateur-container h2 {
+  text-align: center;
+  color: #00008b;
+  text-decoration: underline;
+}
+
+.CreateUtilisateur-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.CreateUtilisateur-container input {
+  margin-block-end: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select {
+  inline-size: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.CreateUtilisateur-container button:hover {
+  background-color: #4169e1;
+}
+
+.CreateUtilisateur-container p {
+  text-align: center;
+  color: #000000;
+}

@@ -1,0 +1,47 @@
+.app-logo {
+  inline-size: 10%;
+  block-size: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-logo {
+  block-size: 110px;
+  inline-size: auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-inline-end: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

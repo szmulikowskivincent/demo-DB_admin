@@ -1,0 +1,162 @@
+table {
+  margin: 50px auto;
+  inline-size: 80%;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  block-size: 40px;
+  display: inline-block;
+  margin: 0 5px;
+  inline-size: 100px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button[style*="red"] {
+  background-color: #f44336;
+}
+
+button[style*="red"]:hover {
+  background-color: #e60000;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+
+table {
+  font-family: Arial, sans-serif;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  inline-size: 600px;
+  max-inline-size: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close:hover {
+  color: black;
+}
+
+h2 {
+  margin-block-end: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select {
+  inline-size: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  inline-size: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+
