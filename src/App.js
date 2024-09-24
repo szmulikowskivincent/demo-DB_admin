@@ -11,10 +11,11 @@ import "./css/App.css";
 import "./css/UserTable.css";
 import logo from "./assets/logo.svg";
 import CreateUtilisateur from "./components/CreateUtilisateur";
-import UserTable from "./components/UserTable";
 import Footer from "./components/Footer";
-import LoginFormComponent from "./components/LoginFormComponent";
+import LoginFormsComponent from "./components/LoginFormsComponent";
 import Dashboard_dataComponent from "./components/Dashboard_DataComponent";
+import ContactFormsComponent from "./components/ContactFormsComponent";
+import HomePageComponent from "./components/HomePageComponent";
 
 function App() {
   return (
@@ -23,13 +24,15 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/login" element={<LoginFormComponent />} />
+            <Route path="/" element={<HomePageComponent />} />
+            <Route path="/login" element={<LoginFormsComponent />} />
+            <Route path="/register" element={<CreateUtilisateur />} />
             <Route
               path="/dashboard_data"
               element={<Dashboard_dataComponent />}
             />
+            <Route path="/contact" element={<ContactFormsComponent />} />
           </Routes>
-          <CreateUtilisateur />
           <Footer />
         </main>
       </div>
@@ -51,6 +54,8 @@ const Header = () => {
           <img src={logo} alt="Logo" className="header-logo" />
         </Link>
         <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/register">Register</Link>
         <button onClick={handleLoginClick}>Login</button>
       </nav>
     </header>

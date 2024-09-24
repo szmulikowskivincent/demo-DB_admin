@@ -6,10 +6,12 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 function Footer() {
   return (
     <footer className="footer-container">
-      <p>
+      <br />
+      <p style={{ color: "#92bff0" }}>
         © 2024 Vincent Szmulikowski. Tous droits réservés. Interdiction de
         copie.
       </p>
+      <br />
       <div className="social-icons">
         <a
           href="https://github.com/your-github-username"

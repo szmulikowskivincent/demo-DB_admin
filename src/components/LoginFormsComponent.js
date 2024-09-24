@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import securityAlertGif from "../assets/logo_Alerte.gif";
 import { useNavigate } from "react-router-dom";
 
-const LoginFormComponent = () => {
+const LoginFormsComponent = () => {
   const [email, setEmail] = useState("vszmulikowski@gmail.com");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -59,6 +59,7 @@ const LoginFormComponent = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
+        <p>🔴 Hors connection!</p>
         <h2>Admin Login</h2>
         <div>
           <label>Email</label>
@@ -106,7 +107,6 @@ const LoginFormComponent = () => {
             alt="Security Alert"
             className="security-logo"
           />
-          <h3>⚠️ Alerte intrusion système</h3>
           <ToastContainer />
         </div>
       )}
@@ -114,4 +114,4 @@ const LoginFormComponent = () => {
   );
 };
 
-export default LoginFormComponent;
+export default LoginFormsComponent;

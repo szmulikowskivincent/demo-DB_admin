@@ -5,51 +5,62 @@
   align-items: center;
   block-size: 50vh;
   padding: 50px;
-  background-color: #f0f2f5;
+  background-color: #4b4848;
 }
 
 .login-form {
   background-color: #fff;
-  padding: 2rem;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-inline-size: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-inline-size: 600px;
   inline-size: 100%;
 }
 
 .login-form h2 {
-  margin-block-end: 1rem;
+  margin-block-end: 15px;
   font-size: 24px;
-  color: #00008b;
+  color: #92bff0;
   text-decoration: underline;
   text-align: center;
 }
 
 .login-form div {
-  margin-block-end: 1rem;
+  margin-block-end: 15px;
 }
 
 .login-form label {
   display: block;
-  margin-block-end: 0.5rem;
+  margin-block-end: 5px;
   font-size: 14px;
   color: #555;
 }
 
 .login-form input {
   inline-size: 100%;
-  padding: 0.75rem;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-form input[type="email"] {
+  inline-size: 100%;
+  padding: 12px;
+}
+
+.login-form input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .login-form button {
   inline-size: 100%;
-  padding: 0.75rem;
+  padding: 10px 15px;
   border: none;
   background-color: #007bff;
-  color: #fff;
+  color: white;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -60,9 +71,10 @@
 }
 
 .login-form p {
-  margin-block-start: 1rem;
+  margin-block-start: 5px;
   text-align: center;
-  color: #d9534f;
+  color: red;
+  font-size: 14px;
 }
 
 h3 {
