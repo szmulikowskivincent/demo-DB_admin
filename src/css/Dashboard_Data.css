@@ -1,3 +1,11 @@
+.dashboard-avatar {
+  inline-size: 80px;
+  block-size: 80px;
+  border-radius: 50%;
+  margin-inline-end: 20px;
+  margin-inline-start: 990px;
+}
+
 h2 {
   text-align: center;
   font-size: 24px;
