@@ -6,6 +6,7 @@ import "../css/UserTable.css";
 
 function UserTable() {
   const [users, setUsers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [error, setError] = useState("");
   const [selectedUser, setSelectedUser] = useState(null);
   const [email, setEmail] = useState("");
@@ -70,7 +71,6 @@ function UserTable() {
     try {
       let hashedPassword = password;
 
-      // Hash the password if it's not empty
       if (password) {
         const salt = await bcrypt.genSalt(10);
         hashedPassword = await bcrypt.hash(password, salt);
@@ -108,9 +108,28 @@ function UserTable() {
     }
   };
 
+  const filteredAndSortedUsers = users
+    .filter((user) => user.nom.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => a.nom.localeCompare(b.nom));
+
   return (
     <div>
       {error && <p style={{ color: "red" }}>{error}</p>}
+
+      <input
+        type="text"
+        placeholder="Rechercher par nom..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{
+          width: "50%",
+          padding: "10px",
+          margin: "20px auto",
+          display: "block",
+          borderRadius: "5px",
+          border: "1px solid #ccc",
+        }}
+      />
 
       <table
         style={{
@@ -191,7 +210,7 @@ function UserTable() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {filteredAndSortedUsers.map((user) => (
             <tr
               key={user.id}
               style={{
@@ -293,51 +312,44 @@ function UserTable() {
       {selectedUser && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={() => setSelectedUser(null)}>
-              &times;
-            </span>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Mot de passe (laisser vide pour ne pas changer)"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Nom"
-              value={nom}
-              onChange={(e) => setNom(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Prénom"
-              value={prenom}
-              onChange={(e) => setPrenom(e.target.value)}
-            />
-
-            <select value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="ADMIN">Admin</option>
-              <option value="UTILISATEUR">Utilisateur</option>
-              <option value="INVITE">Invité</option>
-            </select>
-
-            <button onClick={handleUpdate}>Mettre à jour</button>
-            <button
-              onClick={() => setSelectedUser(null)}
-              style={{ backgroundColor: "red" }}
-            >
-              Annuler
-            </button>
+            <h2>Mettre à jour l'utilisateur</h2>
+            <form onSubmit={handleUpdate}>
+              <label>Email :</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label>Nom :</label>
+              <input
+                type="text"
+                value={nom}
+                onChange={(e) => setNom(e.target.value)}
+              />
+              <label>Prénom :</label>
+              <input
+                type="text"
+                value={prenom}
+                onChange={(e) => setPrenom(e.target.value)}
+              />
+              <label>Rôle :</label>
+              <input
+                type="text"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+              />
+              <label>Mot de passe :</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type="submit">Mettre à jour</button>
+              <button onClick={() => setSelectedUser(null)}>Fermer</button>
+            </form>
           </div>
         </div>
       )}
-
       <ToastContainer />
     </div>
   );
